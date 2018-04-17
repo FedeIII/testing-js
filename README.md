@@ -27,4 +27,12 @@ yarn coverage
 
 Test purpose. Basic test structure
 
-- Exercise: TDD for noRepetition
+- Exercise 1: TDD for noRepetition
+
+### Lesson 2
+
+- Exercise 1 solution (what if the order doesn't matter)
+
+Advanced test structure. Basics of Spies.
+
+- Exercise 2: 

@@ -23,5 +23,5 @@ export function twoSum(array, target) {
 // }
 
 export function noRepetition(array) {
-
+  return [...new Set(array)];
 }
