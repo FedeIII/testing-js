@@ -25,7 +25,7 @@ yarn coverage
 
 ### Lesson 1
 
-`Test purpose. Basic test structure`
+`Tests purpose. Basic tests structure`
 
 - Exercise 1: TDD for noRepetition
 
@@ -33,6 +33,6 @@ yarn coverage
 
 - Exercise 1 solution (what if the order doesn't matter)
 
-`Advanced test structure. Basics of Spies.`
+`Advanced tests structure. Basics of Spies.`
 
 - Exercise 2: 
