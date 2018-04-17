@@ -4,7 +4,7 @@ A quick journey through the basics of js testing
 
 ## How To
 
-Go to a lesson branch to see the new lesson, go to master for the full course
+Go to a lesson branch `lessonN` to see the new lesson, go to `master` for the full course
 
 Set up the project:
 ```bash

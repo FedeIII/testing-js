@@ -10,14 +10,14 @@ export function twoSum(array, target) {
   }
 }
 
-export function twoSum2(array, target) {
-  const diffs = {};
-  for (const [j, value] of array.entries()) {
-    const i = diffs[value];
-    if (typeof i !== 'undefined') {
-      return [i, j];
-    }
+// export function twoSum(array, target) {
+//   const diffs = {};
+//   for (const [j, value] of array.entries()) {
+//     const i = diffs[value];
+//     if (typeof i !== 'undefined') {
+//       return [i, j];
+//     }
 
-    diffs[target - value] = j;
-  }
-}
+//     diffs[target - value] = j;
+//   }
+// }
