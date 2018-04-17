@@ -25,6 +25,6 @@ yarn coverage
 
 ### Lesson 1
 
-Test purpose. Basic test structure
+`Tests purpose. Basic tests structure`
 
-- Exercise: TDD for noRepetition
+- Exercise 1: TDD for noRepetition
