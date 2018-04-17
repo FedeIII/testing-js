@@ -14,4 +14,8 @@ describe('Lesson 1', () => {
       expect(twoSum([2, -3, 12, 15], 9)).toEqual([1, 2]);
     });
   });
+
+  describe('noRepetition', () => {
+    
+  });
 });
