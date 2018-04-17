@@ -20,3 +20,11 @@ Launch tests with coverage:
 ```bash
 yarn coverage
 ```
+
+## Lessons
+
+### Lesson 1
+
+Test purpose. Basic test structure
+
+- Exercise: TDD for noRepetition
