@@ -62,8 +62,8 @@ describe('Lesson 2', () => {
   });
 
   describe('#checkHash', () => {
-    it('logs if the value has a high hash', () => {});
-    it('logs if the value has a low hash', () => {});
+    it('logs if the value has a high hash (hash >= 0.5)', () => {});
+    it('logs if the value has a low hash (hash < 0.5)', () => {});
   });
 
   let model;
