@@ -17,4 +17,12 @@ export class Model {
   decode(hash) {
     return this.crypto.decode(hash);
   }
+
+  checkHash() {
+    if (this.encode() >= 0.5) {
+      this.logger.log(`${this.value} has a high hash`);
+    } else {
+      this.logger.log(`${this.value} has a low hash`);
+    }
+  }
 };

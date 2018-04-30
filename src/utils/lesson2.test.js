@@ -62,8 +62,23 @@ describe('Lesson 2', () => {
   });
 
   describe('#checkHash', () => {
-    it('logs if the value has a high hash (hash >= 0.5)', () => {});
-    it('logs if the value has a low hash (hash < 0.5)', () => {});
+    it('logs if the value has a high hash (hash >= 0.5)', () => {
+      givenHighHashEncode();
+      model.setValue(value1);
+
+      model.checkHash();
+
+      expect(mockedLogger.log).toHaveBeenCalledWith(`${value1} has a high hash`);
+    });
+
+    it('logs if the value has a low hash (hash < 0.5)', () => {
+      givenLowHashEncode();
+      model.setValue(value1);
+
+      model.checkHash();
+
+      expect(mockedLogger.log).toHaveBeenCalledWith(`${value1} has a low hash`);
+    });
   });
 
   let model;
@@ -101,5 +116,13 @@ describe('Lesson 2', () => {
   const mockDependencies = () => {
     mockLogger();
     mockCrypto();
+  };
+
+  const givenHighHashEncode = () => {
+    mockedCrypto.encode = () => 0.5;
+  };
+
+  const givenLowHashEncode = () => {
+    mockedCrypto.encode = () => 0.4;
   };
 });

@@ -36,3 +36,11 @@ yarn coverage
 `Advanced tests structure. Basics of Spies.`
 
 - Exercise 2: checkHash method
+
+### Lesson 3
+
+- Exercise 2 solution
+
+`Async testing`
+
+-Exercise 3
