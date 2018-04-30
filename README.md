@@ -35,4 +35,4 @@ yarn coverage
 
 `Advanced tests structure. Basics of Spies.`
 
-- Exercise 2: 
+- Exercise 2: checkHash method
