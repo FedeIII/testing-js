@@ -44,3 +44,9 @@ yarn coverage
 `Async testing`
 
 -Exercise 3: fetchQuote method
+
+### Lesson 4
+
+- Exercise 3 solution
+
+`React testing`

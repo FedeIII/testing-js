@@ -1,6 +1,6 @@
 import { request } from './helpers/request';
 
-const DEFAULT_QUOTE = {
+export const DEFAULT_QUOTE = {
   quote_data: 'quote data',
 };
 
