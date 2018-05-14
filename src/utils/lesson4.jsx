@@ -1,5 +1,18 @@
 import React, { Fragment } from 'react';
-import { FRONT_STACK, JS_LANG } from './helpers/constants';
+import {
+  FRONT_STACK,
+  JS_LANG,
+  TYPESCRIPT_LANG,
+  RUBY_LANG
+} from './helpers/constants';
+
+function formatLanguage(lang) {
+  return {
+    [JS_LANG]: 'Javascript',
+    [TYPESCRIPT_LANG]: 'Typescript',
+    [RUBY_LANG]: 'Ruby',
+  }[lang];
+}
 
 function renderJsFws(props) {
   const { year } = props;
@@ -58,15 +71,15 @@ function renderBackFws(props) {
 }
 
 export function FrameworkSuggester(props) {
-  const { stack, action } = props;
+  const { stack, language, year } = props;
 
   const isFront = stack === FRONT_STACK;
 
   return (
     <div className="suggestions">
+      <h1>{`Frameworks for ${formatLanguage(language)} (${year})`}</h1>
       {isFront && renderFrontFws(props)}
       {!isFront && renderBackFws(props)}
-      <button onClick={action()}>Click me!</button>
     </div>
   );
 }

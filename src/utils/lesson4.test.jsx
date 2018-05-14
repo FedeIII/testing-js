@@ -14,8 +14,7 @@ describe('Lesson 4', () => {
     props = {
       stack: null,
       language: null,
-      year: null,
-      action: jest.fn(),
+      year: 2018,
     };
   });
 
@@ -36,6 +35,7 @@ describe('Lesson 4', () => {
 
         component = render();
 
+        expectTitleToEqual(`Frameworks for Javascript (2018)`);
         expectTextShown('Node');
       });
     });
@@ -46,6 +46,7 @@ describe('Lesson 4', () => {
 
         component = render();
 
+        expectTitleToEqual(`Frameworks for Ruby (2018)`);
         expectTextShown('Ruby on Rails');
       });
     });
@@ -68,58 +69,39 @@ describe('Lesson 4', () => {
       });
 
       describe('pre 2014', () => {
-        beforeEach(() => {
+        it('shows Backbone and Ember', () => {
           givenYear(2010);
-        });
 
-        it('shows Backbone', () => {
           component = render();
 
+          expectTitleToEqual(`Frameworks for Javascript (2010)`);
           expectTextShown('Backbone');
-        });
-
-        it('shows Ember', () => {
-          component = render();
-
           expectTextShown('Ember');
         });
       });
 
       describe('post 2014', () => {
-        beforeEach(() => {
+        it('shows React and Vue', () => {
           givenYear(2014);
-        });
 
-        it('shows React', () => {
           component = render();
 
+          expectTitleToEqual(`Frameworks for Javascript (2014)`);
           expectTextShown('React');
-        });
-
-        it('shows Vue', () => {
-          component = render();
-
           expectTextShown('Vue');
         });
       });
     });
 
     describe('typescript fws', () => {
-      beforeEach(() => {
-        givenLanguage(TYPESCRIPT_LANG);
-      });
-
       it('shows angular', () => {
+        givenLanguage(TYPESCRIPT_LANG);
+
         component = render();
 
+        expectTitleToEqual(`Frameworks for Typescript (2018)`);
         expectTextShown('Angular');
       });
-    });
-  });
-
-  describe('action', () => {
-    it('triggers action on button click', () => {
-      component = render();
     });
   });
 
@@ -140,6 +122,9 @@ describe('Lesson 4', () => {
     props.year = year;
   };
 
+  const expectTitleToEqual = expectedTitle =>
+    expect(component.find('h1').text()).toEqual(expectedTitle);
+  
   const expectBackEndFwsShown = () =>
     expect(component.find('[data-stack="back"]').length).toEqual(1);
 
