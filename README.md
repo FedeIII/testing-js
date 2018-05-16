@@ -52,3 +52,9 @@ yarn coverage
 `React testing`
 
 - Exercise 4: onClick callback
+
+### Lesson 5
+
+- Exercise 4 solution
+
+`React state testing`

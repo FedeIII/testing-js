@@ -12,6 +12,7 @@ import { FrameworkSuggester } from './lesson4';
 describe('Lesson 4', () => {
   beforeEach(() => {
     props = {
+      action: jest.fn(),
       stack: null,
       language: null,
       year: 2018,
@@ -105,7 +106,22 @@ describe('Lesson 4', () => {
     });
   });
 
-  describe('on button click', () => {});
+  describe('on button click', () => {
+    it('executes the action', () => {
+      givenStack(FRONT_STACK);
+      givenLanguage(JS_LANG);
+      givenYear(2018);
+      component = render();
+
+      onButtonClick();
+
+      expect(props.action).toHaveBeenCalledWith({
+        stack: FRONT_STACK,
+        language: JS_LANG,
+        year: 2018,
+      });
+    });
+  });
 
   let props;
   let component;
@@ -126,7 +142,7 @@ describe('Lesson 4', () => {
 
   const expectTitleToEqual = expectedTitle =>
     expect(component.find('h1').text()).toEqual(expectedTitle);
-  
+
   const expectBackEndFwsShown = () =>
     expect(component.find('[data-stack="back"]').length).toEqual(1);
 
@@ -137,4 +153,6 @@ describe('Lesson 4', () => {
     expect(
       component.findWhere(element => element.html().includes(text)).exists(),
     ).toBeTruthy();
+
+  const onButtonClick = () => component.find('button').simulate('click');
 });
