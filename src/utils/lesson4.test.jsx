@@ -105,6 +105,8 @@ describe('Lesson 4', () => {
     });
   });
 
+  describe('on button click', () => {});
+
   let props;
   let component;
 

@@ -43,10 +43,12 @@ yarn coverage
 
 `Async testing`
 
--Exercise 3: fetchQuote method
+- Exercise 3: fetchQuote method
 
 ### Lesson 4
 
 - Exercise 3 solution
 
 `React testing`
+
+- Exercise 4: onClick callback

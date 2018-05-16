@@ -71,7 +71,7 @@ function renderBackFws(props) {
 }
 
 export function FrameworkSuggester(props) {
-  const { stack, language, year } = props;
+  const { stack, language, year, action } = props;
 
   const isFront = stack === FRONT_STACK;
 
@@ -80,6 +80,7 @@ export function FrameworkSuggester(props) {
       <h1>{`Frameworks for ${formatLanguage(language)} (${year})`}</h1>
       {isFront && renderFrontFws(props)}
       {!isFront && renderBackFws(props)}
+      <button onClick={action}>Click me!</button>
     </div>
   );
 }
