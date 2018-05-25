@@ -8,6 +8,7 @@
         "build": "webpack",
         "watch": "webpack --watch",
         "test": "jest --env=jsdom --watch",
+        "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand --env=jsdom --watch",
         "coverage": "jest --coverage"
     },
     "babel": {
