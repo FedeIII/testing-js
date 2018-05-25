@@ -1,3 +1,4 @@
+import "babel-polyfill";
 import { Model, DEFAULT_QUOTE } from './lesson3';
 import { request } from './helpers/request';
 
