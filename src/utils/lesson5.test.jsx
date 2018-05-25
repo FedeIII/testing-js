@@ -106,20 +106,26 @@ describe('Lesson 5', () => {
     });
   });
 
-  describe('on button click', () => {
-    it('executes the action', () => {
-      givenStack(FRONT_STACK);
+  describe('on language change', () => {
+    beforeEach(() => {
       givenLanguage(JS_LANG);
       givenYear(2018);
       component = render();
+    });
 
-      onButtonClick();
+    it('shows the front stack', () => {
+      onStackChange(FRONT_STACK);
 
-      expect(props.action).toHaveBeenCalledWith({
-        stack: FRONT_STACK,
-        language: JS_LANG,
-        year: 2018,
-      });
+      expectTitleToEqual(`Frameworks for Javascript (2018)`);
+      expectTextShown('React');
+      expectTextShown('Vue');
+    });
+
+    it('shows the back stack', () => {
+      onStackChange(BACK_STACK);
+
+      expectTitleToEqual(`Frameworks for Javascript (2018)`);
+      expectTextShown('Node');
     });
   });
 
@@ -154,5 +160,9 @@ describe('Lesson 5', () => {
       component.findWhere(element => element.html().includes(text)).exists(),
     ).toBeTruthy();
 
-  const onButtonClick = () => component.find('button').simulate('click');
+  const onStackChange = stack => {
+    component
+      .find('select[name="stack"]')
+      .simulate('change', {target: {value: stack}});
+  };
 });

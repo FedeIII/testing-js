@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import {
   FRONT_STACK,
+  BACK_STACK,
   JS_LANG,
   TYPESCRIPT_LANG,
   RUBY_LANG,
@@ -27,14 +28,16 @@ export class FrameworkSuggester extends Component {
     };
   }
 
-  onClick = () => {
-    const { action } = this.props;
-    action(this.state);
+  onStackChange = event => {
+    const {
+      target: { value },
+    } = event;
+    this.setState({ stack: value });
   };
 
   renderJsFws() {
     const { year } = this.state;
-  
+
     return (
       <ul className="js">
         {year < 2014 && (
@@ -43,7 +46,7 @@ export class FrameworkSuggester extends Component {
             <li className="ember">Ember</li>
           </Fragment>
         )}
-  
+
         {year >= 2014 && (
           <Fragment>
             <li className="react">React</li>
@@ -53,12 +56,12 @@ export class FrameworkSuggester extends Component {
       </ul>
     );
   }
-  
+
   renderFrontFws() {
     const { language } = this.state;
-  
+
     const isJs = language === JS_LANG;
-  
+
     return (
       <div className="front" data-stack="front">
         {isJs && this.renderJsFws()}
@@ -66,12 +69,12 @@ export class FrameworkSuggester extends Component {
       </div>
     );
   }
-  
+
   renderBackFws() {
     const { language } = this.state;
-  
+
     const isJs = language === JS_LANG;
-  
+
     return (
       <div className="back" data-stack="back">
         {isJs && (
@@ -91,13 +94,17 @@ export class FrameworkSuggester extends Component {
 
     return (
       <div className="suggestions">
-        {(language && year) && (
-          <h1>{`Frameworks for ${formatLanguage(language)} (${year})`}</h1>
-        )}
+        {language &&
+          year && (
+            <h1>{`Frameworks for ${formatLanguage(language)} (${year})`}</h1>
+          )}
         {isFront && this.renderFrontFws()}
         {!isFront && this.renderBackFws()}
-        <button onClick={this.onClick}>Click me!</button>
+        <select value={stack} name="stack" onChange={this.onStackChange}>
+          <option value={FRONT_STACK}>{FRONT_STACK}</option>
+          <option value={BACK_STACK}>{BACK_STACK}</option>
+        </select>
       </div>
     );
   }
-};
+}
