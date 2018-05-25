@@ -6,7 +6,7 @@ module.exports = {
     output: {
         filename: './dist/bundle.js'
     },
-    devtool: 'source-map',
+    devtool: 'eval-source-map',
     module: {
         loaders: [{
             test: /\.jsx?$/,
