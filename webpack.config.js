@@ -2,11 +2,11 @@ var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-    entry: ['babel-polyfill', './src/index.js'],
+    entry: './src/index.js',
     output: {
         filename: './dist/bundle.js'
     },
-    devtool: 'source-map',
+    devtool: 'eval-source-map',
     module: {
         loaders: [{
             test: /\.jsx?$/,
