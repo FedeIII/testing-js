@@ -26,35 +26,3 @@ yarn coverage
 ### Lesson 1
 
 `Tests purpose. Basic tests structure`
-
-- Exercise 1: TDD for noRepetition
-
-### Lesson 2
-
-- Exercise 1 solution (what if the order doesn't matter)
-
-`Advanced tests structure. Basics of Spies.`
-
-- Exercise 2: checkHash method
-
-### Lesson 3
-
-- Exercise 2 solution
-
-`Async testing`
-
-- Exercise 3: fetchQuote method
-
-### Lesson 4
-
-- Exercise 3 solution
-
-`React testing`
-
-- Exercise 4: onClick callback
-
-### Lesson 5
-
-- Exercise 4 solution
-
-`React state testing`
