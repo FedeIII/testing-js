@@ -1,5 +1,5 @@
 import React from 'react';
-import { priceFormatter } from '../helpers/formatter';
+import { currencyFormater } from '../helpers/formatter';
 
 export function Quotes(props) {
   const { lob, price } = props;
@@ -12,13 +12,13 @@ export function Quotes(props) {
       {(lob && price) && (
         <div className="quote">
           <span>Your quote for {lob}:</span>
-          <span>{priceFormatter(price)}</span>
+          <span>{currencyFormater(price)}</span>
         </div>
       )}
 
       {(!lob || !price) && (
         <div className="quote">
-          Sorry, we couldn't get your quote
+          Sorry, we could not get your quote
         </div>
       )}
 
