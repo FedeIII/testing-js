@@ -86,11 +86,11 @@ describe('Lesson 2', () => {
   });
 
   describe('on submit', () => {
-    describe('sends quote email', () => {
+    it('sends quote email', () => {
 
     });
 
-    describe('does NOT send quote email', () => {
+    it('does NOT send quote email', () => {
 
     });
   });
