@@ -26,3 +26,7 @@ yarn coverage
 ### Lesson 1
 
 `Tests purpose. Basic tests structure`
+
+### Lesson 2
+
+`Spies`
